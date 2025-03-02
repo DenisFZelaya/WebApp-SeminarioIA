@@ -356,7 +356,7 @@ const MyFavorites = () => {
                         <button
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 1}
-                            className={`px-3 py-1 rounded-md ${currentPage === 1 ? 'bg-gray-700 text-gray-500 cursor-not-allowed' : 'bg-gray-800 text-cyan-300 hover:bg-gray-700'}`}
+                            className={`px-3 py-1 rounded-md ${currentPage === 1 ? 'bg-gray-700  text-gray-500 cursor-not-allowed' : 'bg-gray-800 text-cyan-300 hover:bg-gray-700'}`}
                         >
                             <i className="fas fa-angle-left"></i>
                         </button>
@@ -378,7 +378,7 @@ const MyFavorites = () => {
                                 <button
                                     key={pageNum}
                                     onClick={() => handlePageChange(pageNum)}
-                                    className={`px-3 py-1 rounded-md ${currentPage === pageNum ? 'bg-cyan-500 text-gray-900' : 'bg-gray-800 text-cyan-300 hover:bg-gray-700'}`}
+                                    className={`px-3 py-1 rounded-md ${currentPage === pageNum ? 'bg-cyan-500 text-gray-100' : 'bg-gray-800 text-cyan-300 hover:bg-gray-700'}`}
                                 >
                                     {pageNum}
                                 </button>

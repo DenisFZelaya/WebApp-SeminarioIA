@@ -244,7 +244,7 @@ const MyFavorites2 = () => {
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {filteredMovies.map(movie => (
-                            <div
+                          <div
                                 key={movie.movieId}
                                 className={`relative group cursor-pointer transition-all duration-300 transform hover:-translate-y-2 ${favorites.includes(parseInt(movie.movieId)) ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-gray-900' : ''}`}
                                 onClick={() => handleMovieClick(parseInt(movie.movieId))}

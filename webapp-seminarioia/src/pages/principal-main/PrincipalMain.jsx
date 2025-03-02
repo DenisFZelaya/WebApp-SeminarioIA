@@ -5,6 +5,8 @@ import Recomendations from "../recomendations/recomendations";
 import MyFavorites from "../my-favorites/MyFavorites";
 import Team from "../team/Team";
 import Implementations from "../Implementations/Implementations";
+import DesktopNav from "../../components/DesktopNav";
+import MovileNav from "../../components/MovileNav";
 
 export default function PrincipalMain() {
   const { user, logout } = useAuth0();
@@ -30,29 +32,7 @@ export default function PrincipalMain() {
             </div>
 
             {/* Navegación de escritorio */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#dashboard"
-
-                onClick={() => setActiveSection(0)}
-                className="text-cyan-300 hover:text-cyan-100 px-3 py-2 text-sm font-medium border-b-2 border-cyan-500">
-                Recomendaciones
-              </a>
-              <a href="#projects"
-                onClick={() => setActiveSection(1)}
-                className="text-cyan-300/70 hover:text-cyan-100 px-3 py-2 text-sm font-medium border-b-2 border-transparent hover:border-cyan-500/50">
-                Mis Favoritas
-              </a>
-              <a href="#resources"
-                onClick={() => setActiveSection(2)}
-                className="text-cyan-300/70 hover:text-cyan-100 px-3 py-2 text-sm font-medium border-b-2 border-transparent hover:border-cyan-500/50">
-                Equipo
-              </a>
-              <a href="#settings"
-                onClick={() => setActiveSection(3)}
-                className="text-cyan-300/70 hover:text-cyan-100 px-3 py-2 text-sm font-medium border-b-2 border-transparent hover:border-cyan-500/50">
-                Implementación
-              </a>
-            </nav>
+            <DesktopNav setActiveSection={setActiveSection} activeSection={activeSection} />
 
             {/* Botón de menú móvil */}
             <div className="md:hidden">
@@ -79,48 +59,7 @@ export default function PrincipalMain() {
         </div>
 
         {/* Menú móvil */}
-        <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 border-t border-cyan-500/20">
-            <a href="#dashboard"
-              onClick={() => setActiveSection(0)}
-              className="text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-cyan-500">
-              Dashboard
-            </a>
-            <a href="#projects"
-              onClick={() => setActiveSection(1)}
-              className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-              Proyectos
-            </a>
-            <a href="#resources"
-              onClick={() => setActiveSection(2)}
-              className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-              Recursos
-            </a>
-            <a href="#settings"
-              onClick={() => setActiveSection(3)}
-              className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-              Configuración
-            </a>
-          </div>
-
-          {/* Perfil móvil */}
-          <div className="pt-4 pb-3 border-t border-cyan-500/20">
-            <div className="flex items-center px-5">
-              <div className="flex-shrink-0 relative">
-                <img
-                  className="h-10 w-10 rounded-full border-2 border-cyan-500/50 p-0.5"
-                  src={user.picture}
-                  alt={user.name}
-                />
-                <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-400 border-2 border-gray-800"></span>
-              </div>
-              <div className="ml-3">
-                <div className="text-base font-medium text-cyan-100">{user.name}</div>
-                <div className="text-sm text-cyan-300/70">{user.email}</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MovileNav mobileMenuOpen={mobileMenuOpen} setActiveSection={setActiveSection} user={user} />
       </header>
 
       {/* Contenido principal */}
@@ -137,7 +76,7 @@ export default function PrincipalMain() {
                   Bienvenido, {user.given_name}
                 </h2>
                 <p className="text-cyan-300/80 max-w-3xl">
-                  Recomendaciones.
+                  Recomendaciones. {activeSection}
                 </p>
 
               </div>
@@ -151,8 +90,6 @@ export default function PrincipalMain() {
         {activeSection === 1 && <MyFavorites />}
         {activeSection === 2 && <Team />}
         {activeSection === 3 && <Implementations />}
-
-
 
       </main>
 
