@@ -8,25 +8,25 @@ export default function MovileNav({
     return (
         <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 border-t border-cyan-500/20">
-                <a href="#dashboard"
+                <a href="#recomendations"
                     onClick={() => setActiveSection(0)}
                     className="text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-cyan-500">
-                    Dashboard
+                    Recomendaciones
                 </a>
-                <a href="#projects"
+                <a href="#my-favorites"
                     onClick={() => setActiveSection(1)}
                     className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-                    Proyectos
+                    Mis Favoritas
                 </a>
-                <a href="#resources"
+                <a href="#team"
                     onClick={() => setActiveSection(2)}
                     className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-                    Recursos
+                    Equipo
                 </a>
-                <a href="#settings"
+                <a href="#developers"
                     onClick={() => setActiveSection(3)}
                     className="text-cyan-300/70 hover:text-cyan-100 block px-3 py-2 rounded-md text-base font-medium border-l-2 border-transparent hover:border-cyan-500/50">
-                    Configuración
+                    Implementación
                 </a>
             </div>
 

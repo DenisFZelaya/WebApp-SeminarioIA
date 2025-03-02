@@ -18,7 +18,7 @@ export default function DesktopNav({
     return (
         <nav className="hidden md:flex space-x-8">
             <a 
-                href="#dashboard"
+                href="#recomendations"
                 onClick={(e) => {
                     e.preventDefault(); // Prevenir comportamiento por defecto
                     setActiveSection(0);
@@ -28,7 +28,7 @@ export default function DesktopNav({
                 Recomendaciones
             </a>
             <a 
-                href="#projects"
+                href="#my-favorites"
                 onClick={(e) => {
                     e.preventDefault();
                     setActiveSection(1);
@@ -38,7 +38,7 @@ export default function DesktopNav({
                 Mis Favoritas
             </a>
             <a 
-                href="#resources"
+                href="#team"
                 onClick={(e) => {
                     e.preventDefault();
                     setActiveSection(2);
@@ -48,7 +48,7 @@ export default function DesktopNav({
                 Equipo
             </a>
             <a 
-                href="#settings"
+                href="#developers"
                 onClick={(e) => {
                     e.preventDefault();
                     setActiveSection(3);
